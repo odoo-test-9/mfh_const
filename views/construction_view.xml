@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	 <data>
+	 	<record id="product_template_construction" model="ir.ui.view">
+	 		<field name="name">product.template.construction</field>
+	 		<field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            	<field name="arch" type="xml">
+
+               <xpath expr="//page[@name='variants']" position="after">
+                    <page name="mo" string="Mano de Obra">
+
+                        <field name="mo_cant">
+                            <tree string="Mano de Obra" editable="bottom">
+                                <field name="product_id" on_change="onchange_mo(product_id, cant)"/>
+                                <field name="cant" on_change="onchange_mo(product_id, cant)" sum="Suma"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+
+                    </page>
+                </xpath>
+
+
+                <xpath expr="//field[@name='type']" position="after">
+                        <field name="total_mo" widget="monetary" />
+                </xpath>
+
+
+              </field>
+	    </record>
+     </data>
+</openerp>

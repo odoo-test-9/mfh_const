@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="mo_id_1" model="product.template">
+            <field name="name">Maestro Pintor</field>
+            <field name="list_price">1100</field>
+        </record>
+    </data>
+</openerp>
